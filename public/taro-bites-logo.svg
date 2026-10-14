@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 120" role="img" aria-labelledby="logoTitle logoDesc">
+  <title id="logoTitle">Taro Bites</title>
+  <desc id="logoDesc">A stylized purple and gold logo for Taro Bites</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" x2="1">
+      <stop offset="0%" stop-color="#f8e6ae"/>
+      <stop offset="100%" stop-color="#f0c85d"/>
+    </linearGradient>
+    <linearGradient id="textGrad" x1="0" x2="1">
+      <stop offset="0%" stop-color="#581769"/>
+      <stop offset="100%" stop-color="#8b329f"/>
+    </linearGradient>
+  </defs>
+  <rect x="6" y="16" width="88" height="88" rx="20" fill="url(#bg)"/>
+  <path d="M33 81c-8-10-9-20-1-31 8-11 25-14 39-10 4 1 8 4 10 8 9 18-3 40-23 41-7 0-15-3-25-8z" fill="#fff5df" opacity="0.9"/>
+  <circle cx="64" cy="57" r="10" fill="#b95ff2" opacity="0.9"/>
+  <path d="M54 82c7-5 11-9 18-10 9-1 18 2 20 8-4 12-18 21-31 20-9-1-15-7-7-18z" fill="#f6d56c"/>
+  <text x="112" y="72" font-size="36" font-family="Arial, sans-serif" font-weight="700" fill="url(#textGrad)">Taro</text>
+  <text x="112" y="103" font-size="22" font-family="Arial, sans-serif" font-weight="700" fill="#4d145b" letter-spacing="2">BITES</text>
+</svg>
