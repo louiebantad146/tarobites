@@ -102,6 +102,21 @@ button:focus-visible, a:focus-visible { outline: 3px solid #b94aff; outline-offs
 .perks div { display: flex; align-items: center; gap: 11px; }
 .perks div > span { font-size: 21px; }
 .perks p { font-size: 11px; font-weight: 700; }
+.ad-section {
+  max-width: 1200px; margin: 35px auto 0; padding: 55px 40px;
+  display: grid; grid-template-columns: .8fr 1.2fr; align-items: center; gap: 48px;
+}
+.ad-copy h2 {
+  font-family: 'Outfit', sans-serif; font-size: clamp(36px, 4vw, 52px);
+  letter-spacing: -2px; line-height: 1.02; margin: 16px 0;
+}
+.ad-copy h2 span { color: #8b329f; }
+.ad-copy p { color: #806e7f; font-size: 13px; line-height: 1.8; }
+.ad-video {
+  display: block; width: 100%; aspect-ratio: 16 / 9; object-fit: cover;
+  background: #32143a; border: 8px solid #fffdf8; border-radius: 12px;
+  box-shadow: 0 16px 40px #49204b18;
+}
 .menu-section { max-width: 1200px; margin: auto; padding: 105px 40px 90px; }
 .section-heading { display: flex; justify-content: space-between; align-items: end; gap: 30px; margin-bottom: 42px; }
 .section-heading h2, .story-copy h2 { font-size: clamp(40px, 4vw, 53px); letter-spacing: -2px; line-height: 1.05; }
@@ -221,6 +236,7 @@ button:focus-visible, a:focus-visible { outline: 3px solid #b94aff; outline-offs
   .snack-emoji { font-size: 95px; }
   .sticker-top { left: -2%; }
   .perks { gap: 20px 35px; }
+  .ad-section { padding: 45px 28px; gap: 28px; }
   .product-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px; }
   .product-art { height: 220px; }
   .story-section { padding: 60px 35px; gap: 30px; }
@@ -246,6 +262,7 @@ button:focus-visible, a:focus-visible { outline: 3px solid #b94aff; outline-offs
   .sticker-bottom { right: 4%; }
   .perks { display: grid; grid-template-columns: 1fr; gap: 6px; padding: 18px 35px; }
   .perks p { font-size: 11px; }
+  .ad-section { grid-template-columns: 1fr; gap: 18px; padding: 42px 20px; }
   .menu-section { padding: 65px 19px; }
   .section-heading { display: block; margin-bottom: 27px; }
   .section-heading h2 { font-size: 44px; }
