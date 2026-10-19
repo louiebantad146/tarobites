@@ -1,28 +1,19 @@
 # Taro Bites
 
-A responsive Taro Bites storefront powered by PyScript in the browser. The page
-and shopping-bag interactions are implemented in Python in `public/app.py`;
-Vite serves the static assets and styles during development and builds the
-production site.
+A responsive storefront whose page rendering and interactions run in Python
+with PyScript in the browser.
 
 ## Run locally
 
-Install the JavaScript development dependencies and start Vite:
+From the project folder, start Python's built-in static file server:
 
 ```sh
-npm install
-npm run dev
+python -m http.server 8000
 ```
 
-Open the local URL printed by Vite. PyScript is loaded from its CDN, so the
-browser needs network access to run the Python application.
+Open <http://localhost:8000>. The PyScript runtime is loaded from its CDN, so
+the browser needs network access. Python's HTTP server only serves the files;
+the storefront logic runs as Python in the browser.
 
-## Build
-
-```sh
-npm run build
-npm run preview
-```
-
-The production site is written to `dist/`. The PyScript source and other files
-in `public/` are copied into the build output.
+The source files are `public/app.py` (application), `src/App.css` (styles),
+and `index.html` (the small page shell that loads PyScript).

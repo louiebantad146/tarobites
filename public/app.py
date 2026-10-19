@@ -230,7 +230,7 @@ def render_app():
 
       <header class=\"navbar\">
         <a class=\"brand\" href=\"#home\" aria-label=\"Taro Bites home\">
-          <img src=\"/taro-bites-logo.svg\" alt=\"Taro Bites\" />
+          <img src=\"/public/taro-bites-logo.svg\" alt=\"Taro Bites\" />
         </a>
 
         <nav class=\"nav-links\">
@@ -299,7 +299,7 @@ def render_app():
             <p>Press play and see why every bite is worth sharing.</p>
           </div>
           <video class=\"ad-video\" autoplay muted controls playsinline preload=\"auto\" aria-label=\"Taro Bites advertisement\">
-            <source src=\"/taro-bites-ad.mp4\" type=\"video/mp4\" />
+            <source src=\"/public/taro-bites-ad.mp4\" type=\"video/mp4\" />
             Your browser does not support HTML video.
           </video>
         </section>
