@@ -34,6 +34,38 @@ products = [
         "emoji": "🎁",
         "tag": "GREAT TO SHARE",
     },
+    {
+        "id": 5,
+        "name": "Spicy Taro Twists",
+        "description": "A crispy kick with a little heat.",
+        "price": 99,
+        "emoji": "🌶️",
+        "tag": "SPICY PICK",
+    },
+    {
+        "id": 6,
+        "name": "Taro Cheese Puffs",
+        "description": "Fluffy crunch with cheesy goodness.",
+        "price": 109,
+        "emoji": "🧀",
+        "tag": "CHEESY CRUNCH",
+    },
+    {
+        "id": 7,
+        "name": "Taro Cookie Bites",
+        "description": "Sweet, buttery bites with a taro twist.",
+        "price": 119,
+        "emoji": "🍪",
+        "tag": "SWEET TREAT",
+    },
+    {
+        "id": 8,
+        "name": "Taro Party Pack",
+        "description": "A big mix made for sharing.",
+        "price": 199,
+        "emoji": "🍬",
+        "tag": "PARTY FAVORITE",
+    },
 ]
 
 cart = []

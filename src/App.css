@@ -151,6 +151,10 @@ button:focus-visible, a:focus-visible { outline: 3px solid #b94aff; outline-offs
 .product-art-2 { background: radial-gradient(circle at 50% 57%, #f9eafa, #f0d8f0 70%); }
 .product-art-3 { background: radial-gradient(circle at 50% 57%, #f6f2d3, #e8e5bd 70%); }
 .product-art-4 { background: radial-gradient(circle at 50% 57%, #ffead9, #f6ddca 70%); }
+.product-art-5 { background: radial-gradient(circle at 50% 57%, #ffe3d8, #f7cfc1 70%); }
+.product-art-6 { background: radial-gradient(circle at 50% 57%, #fff2cf, #f4e1b2 70%); }
+.product-art-7 { background: radial-gradient(circle at 50% 57%, #f4e8dd, #e9d5c5 70%); }
+.product-art-8 { background: radial-gradient(circle at 50% 57%, #e8e1f5, #d7c9eb 70%); }
 .product-tag {
   position: absolute; top: 16px; left: 16px; z-index: 1; background: #fffdf7;
   padding: 7px 9px; border-radius: 20px; font-size: 7px; letter-spacing: .7px; font-weight: 800;
