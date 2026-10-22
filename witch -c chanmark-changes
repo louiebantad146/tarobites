@@ -1,0 +1,27 @@
+[33m2586cad[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mchanmark-changes[m[33m, [m[1;31morigin/main[m[33m, [m[1;31morigin/chanmark-changes[m[33m, [m[1;31morigin/HEAD[m[33m, [m[1;32mmain[m[33m)[m updated the ad video playback, no black spaces, no sound now and automatic play
+ index.html        | 2 [32m+[m[31m-[m
+ package-lock.json | 6 [32m++++++[m
+ public/app.py     | 4 [32m++[m[31m--[m
+ src/App.css       | 4 [32m++[m[31m--[m
+ 4 files changed, 11 insertions(+), 5 deletions(-)
+[33mbfa029d[m first commit
+ .oxlintrc.json       |    8 [31m-[m
+ README.md            |   27 [32m+[m[31m-[m
+ index.html           |    4 [32m+[m[31m-[m
+ package-lock.json    | 1349 [31m--------------------------------------------------[m
+ package.json         |   25 [31m-[m
+ public/app.py        |    4 [32m+[m[31m-[m
+ public/www.py        |  368 [31m--------------[m
+ src/App.tsx          |  318 [31m------------[m
+ src/assets/react.svg |    1 [31m-[m
+ src/assets/vite.svg  |    1 [31m-[m
+ src/index.css        |   36 [31m--[m
+ src/main.tsx         |   11 [31m-[m
+ tsconfig.app.json    |   26 [31m-[m
+ tsconfig.json        |    7 [31m-[m
+ tsconfig.node.json   |   23 [31m-[m
+ vite.config.ts       |    7 [31m-[m
+ 16 files changed, 13 insertions(+), 2202 deletions(-)
+[33m37004f1[m Polish storefront with premium visual theme
+ src/App.css | 316 [32m+++++++++++++++++++++++++++++++++++++++++++++++++++[m[31m---------[m
+ 1 file changed, 270 insertions(+), 46 deletions(-)
