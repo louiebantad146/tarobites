@@ -296,9 +296,9 @@ def render_app():
           <div class=\"ad-copy\">
             <span class=\"eyebrow\">A LITTLE TASTE OF TARO BITES</span>
             <h2 id=\"ad-heading\">Meet your new<br /><span>happy snack.</span></h2>
-            <p>Press play and see why every bite is worth sharing.</p>
+            <p>Made for snack breaks, shared moments, and one more delicious bite.</p>
           </div>
-          <video class=\"ad-video\" autoplay muted controls playsinline preload=\"auto\" aria-label=\"Taro Bites advertisement\">
+          <video class=\"ad-video\" autoplay muted loop playsinline preload=\"auto\" aria-label=\"Taro Bites advertisement\">
             <source src=\"/public/taro-bites-ad.mp4\" type=\"video/mp4\" />
             Your browser does not support HTML video.
           </video>

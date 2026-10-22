@@ -127,9 +127,9 @@ button:focus-visible, a:focus-visible { outline: 3px solid #b94aff; outline-offs
 .ad-copy h2 span { color: #8b329f; }
 .ad-copy p { color: #806e7f; font-size: 13px; line-height: 1.8; }
 .ad-video {
-  display: block; width: 100%; aspect-ratio: 16 / 9; object-fit: cover;
+  display: block; width: 100%; aspect-ratio: 4 / 3; object-fit: cover;
   background: #32143a; border: 7px solid #fff; border-radius: 18px;
-  box-shadow: var(--soft-shadow);
+  box-shadow: var(--soft-shadow); pointer-events: none;
 }
 .menu-section { max-width: 1200px; margin: auto; padding: 90px 40px 100px; }
 .section-heading { display: flex; justify-content: space-between; align-items: end; gap: 30px; margin-bottom: 38px; }
