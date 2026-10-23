@@ -3,6 +3,9 @@
 A responsive storefront whose page rendering and interactions run in Python
 with PyScript in the browser.
 
+The Taro Bites video ad is featured in the homepage hero and can be played with
+the built-in video controls.
+
 Customers can review a cart summary and continue their order through the
 Taro Bites Messenger page. Final prices and fulfillment details are confirmed
 in chat.

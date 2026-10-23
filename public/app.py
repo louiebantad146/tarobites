@@ -346,21 +346,13 @@ def render_app():
           </div>
 
           <div class=\"hero-art\">
-            <div class=\"sunburst\"></div>
-            <div class=\"hero-sticker sticker-top\">MADE FOR<br />MUNCHING!</div>
-            <div class=\"snack-circle\">
-              <div class=\"snack-emoji\">🍠</div>
-              <div class=\"floating-chip chip-one\">🥔</div>
-              <div class=\"floating-chip chip-two\">✨</div>
-              <div class=\"floating-chip chip-three\">💜</div>
+            <div class=\"hero-video-frame\">
+              <span class=\"hero-video-label\">A LITTLE TASTE OF TARO BITES</span>
+              <video class=\"ad-video\" autoplay muted loop playsinline controls preload=\"auto\" aria-label=\"Taro Bites video advertisement\">
+                <source src=\"/public/taro-bites-ad.mp4\" type=\"video/mp4\" />
+                Your browser does not support HTML video.
+              </video>
             </div>
-            <div class=\"hero-sticker sticker-bottom\">
-              SNACK HAPPY
-              <br />
-              EVERY DAY!
-            </div>
-            <span class=\"sparkle sparkle-one\">✳</span>
-            <span class=\"sparkle sparkle-two\">✦</span>
           </div>
         </section>
 
@@ -369,18 +361,6 @@ def render_app():
           <div><span>💜</span><p>Made for happy moments</p></div>
           <div><span>✨</span><p>Seriously snack-worthy</p></div>
         </div>
-
-        <section class=\"ad-section\" aria-labelledby=\"ad-heading\">
-          <div class=\"ad-copy\">
-            <span class=\"eyebrow\">A LITTLE TASTE OF TARO BITES</span>
-            <h2 id=\"ad-heading\">Meet your new<br /><span>happy snack.</span></h2>
-            <p>Made for snack breaks, shared moments, and one more delicious bite.</p>
-          </div>
-          <video class=\"ad-video\" autoplay muted loop playsinline preload=\"auto\" aria-label=\"Taro Bites advertisement\">
-            <source src=\"/public/taro-bites-ad.mp4\" type=\"video/mp4\" />
-            Your browser does not support HTML video.
-          </video>
-        </section>
 
         <section class=\"menu-section\" id=\"menu\">
           <div class=\"section-heading\">
