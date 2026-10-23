@@ -571,3 +571,56 @@ body { background: var(--cream); color: #2d2230; }
   .story-copy .primary-button { padding: 16px 22px; }
   .story-blob strong { font-size: 34px; }
 }
+
+.skip-link {
+  position: fixed; z-index: 20; top: 12px; left: 12px;
+  padding: 12px 16px; background: #fffdf9; color: #251729;
+  box-shadow: 0 4px 18px #100e1530; transform: translateY(-160%);
+}
+.skip-link:focus { transform: translateY(0); }
+button:focus-visible, a:focus-visible, textarea:focus-visible {
+  outline-color: #c4a46b; outline-offset: 3px;
+}
+section[id] { scroll-margin-top: 20px; }
+.product-card { display: flex; flex-direction: column; min-width: 0; }
+.product-info { display: flex; flex: 1; flex-direction: column; }
+.product-bottom { margin-top: auto; align-items: center; }
+.add-button {
+  min-width: 76px; min-height: 42px; padding: 0 12px;
+  transition: background .2s, color .2s, border-color .2s;
+}
+.quantity-control button { min-width: 32px; min-height: 32px; }
+.close-button { min-width: 44px; min-height: 44px; }
+.cart-total .checkout-button { min-height: 48px; }
+.cart-panel { padding-bottom: max(30px, env(safe-area-inset-bottom)); }
+
+@media (max-width: 540px) {
+  .hero h1 { font-size: clamp(48px, 13vw, 60px); letter-spacing: -1px; }
+  .hero-copy > p, .story-copy > p { font-size: 14px; }
+  .product-grid { gap: 14px; }
+  .product-art { height: clamp(135px, 42vw, 175px); }
+  .product-info { padding: 15px 12px 13px; }
+  .product-info h3 { font-size: 16px; line-height: 1.2; }
+  .product-info p { font-size: 11px; line-height: 1.5; }
+  .product-bottom strong { font-size: 12px; }
+  .product-tag { font-size: 7px; letter-spacing: .5px; }
+  .section-heading > p { font-size: 14px; line-height: 1.7; }
+  .cart-panel { padding: 22px 18px max(22px, env(safe-area-inset-bottom)); }
+  .cart-total p { font-size: 12px; }
+}
+
+@media (max-width: 380px) {
+  .navbar {
+    height: auto; min-height: 76px; flex-wrap: wrap;
+    padding: 8px 14px 10px; row-gap: 7px;
+  }
+  .nav-links {
+    order: 3; flex: 0 0 100%; justify-content: center;
+    padding-top: 8px; border-top: 1px solid #e9e1d7;
+  }
+  .nav-links a { font-size: 9px; }
+  .product-grid { grid-template-columns: 1fr; }
+  .product-art { height: 190px; }
+  .product-info h3 { font-size: 19px; }
+  .product-info p { font-size: 13px; }
+}

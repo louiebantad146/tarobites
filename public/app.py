@@ -107,12 +107,23 @@ def toggle_cart():
     global cart_open
     cart_open = not cart_open
     render_app()
+    if cart_open:
+        close_button = document.querySelector(".close-button")
+        if close_button is not None:
+            close_button.focus()
+    else:
+        cart_button = document.querySelector(".cart-button")
+        if cart_button is not None:
+            cart_button.focus()
 
 
 def close_cart():
     global cart_open
     cart_open = False
     render_app()
+    cart_button = document.querySelector(".cart-button")
+    if cart_button is not None:
+        cart_button.focus()
 
 
 def scroll_to_menu():
@@ -136,6 +147,9 @@ def add_to_cart(product_id):
     global cart_open
     cart_open = True
     render_app()
+    close_button = document.querySelector(".close-button")
+    if close_button is not None:
+        close_button.focus()
 
 
 def change_quantity(product_id, amount):
@@ -203,14 +217,14 @@ def render_cart_contents():
         items.append(
             f"""
             <div class=\"cart-item\" key=\"{item['id']}\">
-              <div class=\"cart-item-emoji\">{item['emoji']}</div>
+              <div class=\"cart-item-emoji\" aria-hidden=\"true\">{item['emoji']}</div>
               <div class=\"cart-item-details\">
                 <h3>{item['name']}</h3>
                 <p>{format_price(item['price'])} each</p>
                 <div class=\"quantity-control\">
-                  <button data-change-quantity-id=\"{item['id']}\" data-change-quantity-delta=\"-1\">−</button>
-                  <span>{item['quantity']}</span>
-                  <button data-change-quantity-id=\"{item['id']}\" data-change-quantity-delta=\"1\">+</button>
+                  <button data-change-quantity-id=\"{item['id']}\" data-change-quantity-delta=\"-1\" aria-label=\"Remove one {item['name']}\">−</button>
+                  <span aria-label=\"Quantity: {item['quantity']}\">{item['quantity']}</span>
+                  <button data-change-quantity-id=\"{item['id']}\" data-change-quantity-delta=\"1\" aria-label=\"Add one {item['name']}\">+</button>
                 </div>
               </div>
               <strong>{format_price(item['price'] * item['quantity'])}</strong>
@@ -261,6 +275,7 @@ def attach_event_handlers():
     panel = document.querySelector(".cart-panel")
     if panel is not None:
         panel.onclick = lambda event: event.stopPropagation()
+        panel.onkeydown = lambda event: close_cart() if event.key == "Escape" else None
 
 
 def render_app():
@@ -271,11 +286,11 @@ def render_app():
     if cart_open:
         cart_section = f"""
         <div class=\"cart-overlay\">
-          <aside class=\"cart-panel\">
+          <aside id=\"cart-dialog\" class=\"cart-panel\" role=\"dialog\" aria-modal=\"true\" aria-labelledby=\"cart-heading\">
             <div class=\"cart-heading\">
               <div>
                 <span class=\"eyebrow\">YOUR SNACK STASH</span>
-                <h2>Your bag <span>({count})</span></h2>
+                <h2 id=\"cart-heading\">Your bag <span>({count})</span></h2>
               </div>
               <button class=\"close-button\" data-action=\"close-cart\" aria-label=\"Close shopping bag\">×</button>
             </div>
@@ -290,23 +305,24 @@ def render_app():
     <div class=\"site-shell\">
       <div class=\"announcement\">A LITTLE CRUNCH, A LOT OF LOVE 💜</div>
 
+      <a class=\"skip-link\" href=\"#main-content\">Skip to content</a>
       <header class=\"navbar\">
         <a class=\"brand\" href=\"#home\" aria-label=\"Taro Bites home\">
           <img src=\"/public/taro-bites-logo.svg\" alt=\"Taro Bites\" />
         </a>
 
-        <nav class=\"nav-links\">
+        <nav class=\"nav-links\" aria-label=\"Main navigation\">
           <a href=\"#home\">Home</a>
           <a href=\"#menu\">Our Snacks</a>
           <a href=\"#story\">Our Story</a>
         </nav>
 
-        <button class=\"cart-button\" data-action=\"toggle-cart\">
-          Bag <span>{count}</span>
+        <button class=\"cart-button\" data-action=\"toggle-cart\" aria-expanded=\"{str(cart_open).lower()}\" aria-controls=\"cart-dialog\">
+          Bag <span aria-live=\"polite\" aria-label=\"{count} items in bag\">{count}</span>
         </button>
       </header>
 
-      <main>
+      <main id=\"main-content\">
         <section class=\"hero\" id=\"home\">
           <div class=\"hero-copy\">
             <span class=\"eyebrow\">YOUR NEW FAVORITE SNACK ✨</span>
