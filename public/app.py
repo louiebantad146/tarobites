@@ -1,5 +1,6 @@
 from datetime import datetime
-from js import document, window
+from html import escape
+from js import document
 
 products = [
     {
@@ -84,6 +85,24 @@ def get_total():
     return sum(item["price"] * item["quantity"] for item in cart)
 
 
+def get_order_summary():
+    lines = ["Hi Taro Bites! I'd like to place this order:"]
+    for item in cart:
+        item_total = item["price"] * item["quantity"]
+        lines.append(
+            f"- {item['name']} x {item['quantity']} — {format_price(item_total)}"
+        )
+    lines.extend(
+        [
+            f"Estimated subtotal: {format_price(get_total())}",
+            "Please confirm final prices, delivery availability and fee, pickup options, and expected timing.",
+            "Name:",
+            "Delivery address or pickup preference:",
+        ]
+    )
+    return escape("\n".join(lines))
+
+
 def toggle_cart():
     global cart_open
     cart_open = not cart_open
@@ -132,6 +151,13 @@ def change_quantity(product_id, amount):
             updated.append(item)
     cart = updated
     render_app()
+
+
+def select_order_summary():
+    summary = document.getElementById("order-summary")
+    if summary is not None:
+        summary.focus()
+        summary.select()
 
 
 def render_product_cards():
@@ -196,8 +222,12 @@ def render_cart_contents():
     <div class=\"cart-items\">{''.join(items)}</div>
     <div class=\"cart-total\">
       <div><span>Subtotal</span><strong>{format_price(get_total())}</strong></div>
-      <p>Delivery fees, if applicable, are not included.</p>
-      <button class=\"primary-button checkout-button\" data-action=\"checkout\">Continue to checkout ↗</button>
+      <p>Displayed prices are samples. Confirm final pricing, delivery areas and fees, pickup options, and timing with us in Messenger.</p>
+      <label class=\"order-summary-label\" for=\"order-summary\">Your order message</label>
+      <textarea class=\"order-summary\" id=\"order-summary\" rows=\"8\" readonly>{get_order_summary()}</textarea>
+      <p class=\"order-guidance\">Select and copy these details, then paste them into your Messenger chat.</p>
+      <button class=\"order-copy-button\" data-action=\"select-order\">Select order details</button>
+      <a class=\"primary-button checkout-button\" href=\"https://m.me/Tarobites\" target=\"_blank\" rel=\"noopener noreferrer\">Continue in Messenger ↗</a>
     </div>
     """
 
@@ -221,8 +251,8 @@ def attach_event_handlers():
     for button in document.querySelectorAll("[data-action='menu']"):
         button.onclick = lambda event: (close_cart(), scroll_to_menu())
 
-    for button in document.querySelectorAll("[data-action='checkout']"):
-        button.onclick = lambda event: window.alert("Thanks for loving Taro Bites! Online checkout isn't connected yet.")
+    for button in document.querySelectorAll("[data-action='select-order']"):
+        button.onclick = lambda event: select_order_summary()
 
     overlay = document.querySelector(".cart-overlay")
     if overlay is not None:

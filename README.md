@@ -3,6 +3,10 @@
 A responsive storefront whose page rendering and interactions run in Python
 with PyScript in the browser.
 
+Customers can review a cart summary and continue their order through the
+Taro Bites Messenger page. Final prices and fulfillment details are confirmed
+in chat.
+
 ## Run locally
 
 From the project folder, start Python's built-in static file server:
